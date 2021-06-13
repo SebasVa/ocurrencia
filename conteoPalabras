@@ -1,0 +1,13 @@
+frecuencia = {}
+archivo = open('test.txt', 'r')
+cadena = archivo.read().lower()
+repeticiones = re.findall(r'\b[a-z]{3,15}\b', cadena)
+ 
+for palabra in repeticiones:
+    count = frecuencia.get(palabra,0)
+    frecuencia[palabra] = count + 1
+     
+frecuenciaList = frecuencia.keys()
+ 
+for palabras in frecuenciaList:
+    print (palabras, frecuencia[palabras])
